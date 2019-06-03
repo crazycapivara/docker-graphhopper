@@ -1,0 +1,14 @@
+version: "2"
+
+services:
+  graph-hopper:
+    container_name: osm-graph-hopper-mvt
+    build: .
+    environment:
+      JAVA_OPTS: "-Xmx1000m -Xms1000m"
+    # volumes:
+    #   - ./data:/data
+    ports:
+      - "8982:8989"
+    command: /data/berlin-latest.osm.pbf
+
